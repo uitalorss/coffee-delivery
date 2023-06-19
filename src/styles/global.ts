@@ -19,11 +19,42 @@ export const GlobalStyled = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     line-height: 130%;
   }
+
+  p{
+    font-family: 'Roboto', sans-serif;
+    line-height: 130%;
+  }
+
+  input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+  }
+
 `
 
-export const Heading1 = styled.p`
-  color: ${props => props.theme.colors['purple']};
-  font-size: ${props => props.theme.sizes.title["title-XL"]};
+export const TitleSmall = styled.h3`
+  font-family: 'Baloo 2', cursive;
+  font-size: ${props => props.theme.sizes.title["title-S"]};
+  line-height: 130%;
+  margin-bottom: .5rem;
+`
+
+export const TitleMedium = styled.h3`
+  font-family: 'Baloo 2', cursive;
+  font-size: ${props => props.theme.sizes.title["title-M"]};
+  line-height: 130%;
+  margin-bottom: .5rem;
+`
+
+export const TextSmall = styled.p`
+  font-size: ${props => props.theme.sizes.text["text-S"]};
+`
+
+export const Tag = styled.span`
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: ${props => props.theme.sizes.button.tag};
+  line-height: 130%;
 `
 
 //font-family: 'Baloo 2', cursive;

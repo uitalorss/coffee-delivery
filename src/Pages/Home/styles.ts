@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
 
+export const HomeContainer = styled.div`
+
+`
+
+
 export const IntroContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -50,4 +55,16 @@ export const SubtitleIntro = styled.p`
   font-size: ${props => props.theme.sizes.text["text-L"]};
   width: 60%;
   line-height: 130%;
+`
+
+export const TitleSecondary = styled.h2`
+  font-size: ${props => props.theme.sizes.title["title-L"]};
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  line-height: 130%;
+`
+
+export const ListContainer = styled.div`
+  display: flex;
+  margin-top: 3.5rem;
 `
