@@ -16,7 +16,8 @@ export const GlobalStyled = createGlobalStyle`
   }
 
   body, input, textarea, button{
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif;
+    line-height: 130%;
   }
 `
 
