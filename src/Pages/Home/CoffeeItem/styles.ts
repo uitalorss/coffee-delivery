@@ -29,10 +29,11 @@ export const InfoPrice = styled.div`
     align-items: center;
     gap: .25rem;
   }
-  div{
-    display: flex;
-    gap: .5rem;
-  }
+`
+
+export const AddToCartContainer = styled.div`
+  display: flex;
+  gap: .5rem;
 `
 
 export const ItemDescription = styled(TextSmall)`

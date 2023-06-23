@@ -2,7 +2,7 @@ import coffee from '../../../assets/coffees/Image.png';
 import { TextSmall, TitleMedium, TitleSmall } from '../../../styles/global';
 import { BuyItem } from '../BuyItem';
 import { QuantityItem } from '../QuantityItem';
-import { InfoPrice, ItemContainer, ItemDescription, TagItem } from './styles';
+import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer } from './styles';
 
 export function CoffeeItem(){
   return(
@@ -15,10 +15,10 @@ export function CoffeeItem(){
         <span>
           <TextSmall>R$</TextSmall><TitleMedium>9,90</TitleMedium>
         </span>
-        <div>
+        <AddToCartContainer>
           <QuantityItem />
           <BuyItem />
-        </div>
+        </AddToCartContainer>
       </InfoPrice>
     </ItemContainer>
   )
