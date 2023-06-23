@@ -1,5 +1,6 @@
 export const coffees = [
   {
+    id: 1,
     nome: 'Expresso Tradicional',
     image: 'tradicional.png',
     tag: ['Tradicional'],
@@ -7,6 +8,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 2,
     nome: 'Expresso Americano',
     image: 'americano.png',
     tag: ['Tradicional'],
@@ -14,6 +16,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 3,
     nome: 'Expresso Cremoso',
     image: 'cremoso.png',
     tag: ['Tradicional'],
@@ -21,6 +24,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 4,
     nome: 'Expresso Gelado',
     image: 'gelado.png',
     tag: ['Tradicional', 'Gelado'],
@@ -28,6 +32,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 5,
     nome: 'Café com Leite',
     image: 'cafecomleite.png',
     tag: ['Tradicional', 'com leite'],
@@ -35,6 +40,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 6,
     nome: 'Latte',
     image: 'latte.png',
     tag: ['Tradicional', 'com leite'],
@@ -42,6 +48,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 7,
     nome: 'Capuccino',
     image: 'capuccino.png',
     tag: ['Tradicional', 'com leite'],
@@ -49,6 +56,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 8,
     nome: 'Macchiato',
     image: 'macchiato.png',
     tag: ['Tradicional', 'com leite'],
@@ -56,6 +64,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 9,
     nome: 'Mocaccino',
     image: 'mocaccino.png',
     tag: ['Tradicional', 'com leite'],
@@ -63,6 +72,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 10,
     nome: 'Chocolate Quente',
     image: 'chocolatequente.png',
     tag: ['Tradicional', 'com leite'],
@@ -70,6 +80,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 11,
     nome: 'Cubano',
     image: 'cubano.png',
     tag: ['especial', 'alcoólico', 'gelado'],
@@ -77,6 +88,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 12,
     nome: 'Havaiano',
     image: 'havaiano.png',
     tag: ['especial'],
@@ -84,6 +96,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 13,
     nome: 'Árabe',
     image: 'arabe.png',
     tag: ['especial'],
@@ -91,6 +104,7 @@ export const coffees = [
     preco: 9.90
   },
   {
+    id: 14,
     nome: 'Irlandês',
     image: 'irlandes.png',
     tag: ['especial', 'alcoolico'],

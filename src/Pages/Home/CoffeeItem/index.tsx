@@ -4,6 +4,7 @@ import { QuantityItem } from '../QuantityItem';
 import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer, TagContainer } from './styles';
 
 interface CoffeeProps{
+  id: number;
   nome: string;
   image: string;
   tag: string[];

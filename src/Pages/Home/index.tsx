@@ -37,7 +37,7 @@ export function Home(){
       <TitleSecondary>Nossos Cafés</TitleSecondary>
       <ListContainer>
         {coffees.map((coffee) => {
-          return <CoffeeItem {...coffee} />
+          return <CoffeeItem key={coffee.id} {...coffee} />
         })}
       </ListContainer>
     </HomeContainer>
