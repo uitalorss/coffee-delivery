@@ -10,7 +10,7 @@ export const ItemContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 256px;
+  max-width: 240px;
   img{
     margin-top: -1.5rem;
     display: block;
@@ -49,4 +49,9 @@ export const TagItem = styled(Tag)`
   background: ${props => props.theme.colors["yellow-light"]};
   color: ${props => props.theme.colors.yellow};
   text-transform: uppercase;
+`
+
+export const TagContainer = styled.ul`
+  display: flex;
+  gap: .25rem;
 `

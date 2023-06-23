@@ -50,7 +50,8 @@ export const TextSmall = styled.p`
   font-size: ${props => props.theme.sizes.text["text-S"]};
 `
 
-export const Tag = styled.span`
+export const Tag = styled.li`
+  list-style: none;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: ${props => props.theme.sizes.button.tag};

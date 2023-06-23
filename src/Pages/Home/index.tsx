@@ -2,6 +2,7 @@ import { HomeContainer, IntroContainer, ListContainer, SubtitleIntro, TitleIntro
 import illustrationCoffee from '../../assets/illustration-coffee.png';
 import { ShoppingCart, Timer, Package,  Coffee} from 'phosphor-react';
 import { CoffeeItem } from "./CoffeeItem";
+import { coffees } from "../../data/coffee";
 
 
 export function Home(){
@@ -35,7 +36,9 @@ export function Home(){
       
       <TitleSecondary>Nossos Cafés</TitleSecondary>
       <ListContainer>
-        <CoffeeItem />
+        {coffees.map((coffee) => {
+          return <CoffeeItem {...coffee} />
+        })}
       </ListContainer>
     </HomeContainer>
   )

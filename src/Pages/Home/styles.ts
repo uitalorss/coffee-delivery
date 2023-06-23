@@ -66,5 +66,7 @@ export const TitleSecondary = styled.h2`
 
 export const ListContainer = styled.div`
   display: flex;
+  gap: 2.5rem 2rem;
+  flex-wrap: wrap;
   margin-top: 3.5rem;
 `
