@@ -1,8 +1,9 @@
-import { HomeContainer, IntroContainer, ListContainer, SubtitleIntro, TitleIntro, TitleSecondary } from "./styles";
+import { HomeContainer, IntroContainer, ListContainer, SubtitleIntro, TitleIntro } from "./styles";
 import illustrationCoffee from '../../assets/illustration-coffee.png';
 import { ShoppingCart, Timer, Package,  Coffee} from 'phosphor-react';
 import { CoffeeItem } from "./CoffeeItem";
 import { coffees } from "../../data/coffee";
+import { TitleLarge } from "../../styles/global";
 
 
 export function Home(){
@@ -34,7 +35,7 @@ export function Home(){
         <img src={illustrationCoffee} alt="imagem de ilustração de café em um copo" />
       </IntroContainer>
       
-      <TitleSecondary>Nossos Cafés</TitleSecondary>
+      <TitleLarge>Nossos Cafés</TitleLarge>
       <ListContainer>
         {coffees.map((coffee) => {
           return <CoffeeItem key={coffee.id} {...coffee} />

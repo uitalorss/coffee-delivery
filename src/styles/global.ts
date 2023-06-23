@@ -32,6 +32,13 @@ export const GlobalStyled = createGlobalStyle`
 
 `
 
+export const TitleLarge = styled.h2`
+  font-size: 2rem;
+  font-family: 'Baloo 2', cursive;
+  line-height: 130%;
+  font-weight: 800;
+`
+
 export const TitleSmall = styled.h3`
   font-family: 'Baloo 2', cursive;
   font-size: ${props => props.theme.sizes.title["title-S"]};

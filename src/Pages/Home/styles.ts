@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { TitleLarge } from "../../styles/global";
 
 export const HomeContainer = styled.div`
 
@@ -57,11 +58,8 @@ export const SubtitleIntro = styled.p`
   line-height: 130%;
 `
 
-export const TitleSecondary = styled.h2`
+export const TitleSecondary = styled(TitleLarge)`
   font-size: ${props => props.theme.sizes.title["title-L"]};
-  font-family: 'Baloo 2', cursive;
-  font-weight: 800;
-  line-height: 130%;
 `
 
 export const ListContainer = styled.div`
