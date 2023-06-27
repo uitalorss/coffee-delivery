@@ -25,7 +25,11 @@ export function CoffeeItem(coffee: CoffeeProps){
       <ItemDescription>{coffee.descricao}</ItemDescription>
       <InfoPrice>
         <span>
-          <TextSmall>R$</TextSmall><TitleMedium>{coffee.preco}</TitleMedium>
+            <TitleSmall>{new Intl.NumberFormat('pt-br', {
+              style: 'currency',
+              currency: 'BRL'
+            }).format(coffee.preco)}
+          </TitleSmall>
         </span>
         <AddToCartContainer>
           <QuantityItem />
