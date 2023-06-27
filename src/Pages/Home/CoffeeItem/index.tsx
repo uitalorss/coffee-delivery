@@ -1,4 +1,4 @@
-import { TextSmall, TitleMedium, TitleSmall } from '../../../styles/global';
+import { TitleSmall } from '../../../styles/global';
 import { BuyItem } from '../BuyItem';
 import { QuantityItem } from '../QuantityItem';
 import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer, TagContainer } from './styles';
