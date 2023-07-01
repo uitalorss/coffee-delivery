@@ -46,6 +46,13 @@ export const TitleSmall = styled.h3`
   margin-bottom: .5rem;
 `
 
+export const TitleXSmall = styled.h4`
+  font-family: 'Baloo 2', cursive;
+  font-size: ${props => props.theme.sizes.title["title-XS"]};
+  font-weight: 700;
+  line-height: 130%;
+`
+
 export const TitleMedium = styled.h3`
   font-family: 'Baloo 2', cursive;
   font-size: ${props => props.theme.sizes.title["title-M"]};
