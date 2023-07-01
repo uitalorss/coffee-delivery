@@ -32,7 +32,7 @@ export function Header(){
           <MapPin className="pinMap" size={22} weight="fill"/>
           <span>{currentLocation?.city}, {currentLocation?.region_code}</span>
         </div>
-        <NavLink to='/'>
+        <NavLink to='/checkout'>
           <ShoppingCart className="cart" size={22} weight="fill"/>
         </NavLink>
       </Info>
