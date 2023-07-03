@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 
 export const CheckoutContainer = styled.div`
-display: flex;
+  display: flex;
 `
 
 export const CheckoutDetailsContainer = styled.div`
@@ -11,17 +11,13 @@ export const CheckoutDetailsContainer = styled.div`
   gap: 1rem;
 `
 
-export const CheckoutContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1rem;
-`
-
-export const CheckoutFormDetails = styled.div`
+export const CheckoutDetails = styled.div`
   padding: 2.5rem;
   background: ${props => props.theme.colors["base-card"]};
   border-radius: 6px;
+`
+
+export const CheckoutFormDetails = styled(CheckoutDetails)`
   form{
     display: grid;
     gap: 1rem .75rem;
@@ -73,7 +69,9 @@ export const CheckoutFormDetails = styled.div`
   }
 `
 
-export const CheckoutDetails = styled.div`
+export const CheckoutOrderDetails = styled(CheckoutDetails)``
+
+export const CheckoutDescription = styled.div`
     display: flex;
     gap: 0 .5rem;
     margin-bottom: 2rem;
@@ -106,11 +104,10 @@ export const CheckoutDetails = styled.div`
     }
 `
 
-export const CheckoutOrder = styled.div``
-
 export const PaymentMethods = styled.ul`
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   li{
     width: 178px;
     list-style: none;
@@ -129,6 +126,9 @@ export const PaymentMethods = styled.ul`
       line-height: 160%;
       text-transform: uppercase;
     }
+    svg{
+      color: ${props => props.theme.colors["purple"]};
+    }
     &:hover{
       background: ${props => props.theme.colors["base-hover"]};
     }
@@ -138,3 +138,5 @@ export const PaymentMethods = styled.ul`
     }
   }
 `
+
+export const CheckoutOrder = styled.div``

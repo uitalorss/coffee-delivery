@@ -1,5 +1,5 @@
 import { MapPin, CurrencyDollar, CreditCard, Bank, Money } from "phosphor-react";
-import { CheckoutContainer, CheckoutContent, CheckoutDetails, CheckoutDetailsContainer, CheckoutFormDetails, CheckoutOrder, PaymentMethods } from "./styles";
+import { CheckoutContainer, CheckoutDescription, CheckoutDetailsContainer, CheckoutFormDetails, CheckoutOrderDetails, PaymentMethods } from "./styles";
 import { TitleXSmall } from "../../styles/global";
 import { useState } from "react";
 export function Checkout(){
@@ -14,13 +14,13 @@ export function Checkout(){
       <CheckoutDetailsContainer>
         <TitleXSmall>Complete seu pedido</TitleXSmall>
         <CheckoutFormDetails>
-          <CheckoutDetails>
+          <CheckoutDescription>
             <span className="mapPin"><MapPin size={22}/></span>
             <div className="titleForm">
               <h3>Endereço de Entrega</h3>
               <p>Informe o endereço onde deseja receber seu pedido</p>
             </div>
-          </CheckoutDetails>
+          </CheckoutDescription>
           <form>
             <input type="text" name="cep" className="cep" placeholder="40000-000"/>
             <input type="text" name="endereco" className="endereco" placeholder="Endereço"/>
@@ -31,14 +31,14 @@ export function Checkout(){
             <input type="text" name="estado" className="estado"  placeholder="BA"/>
           </form>
         </CheckoutFormDetails>
-        <CheckoutFormDetails>
-          <CheckoutDetails>
-            <span className="CurrencyDollar"><CurrencyDollar size={22}/></span>
+        <CheckoutOrderDetails>
+          <CheckoutDescription>
+            <span className="currencyDollar"><CurrencyDollar size={22}/></span>
             <div className="titleForm">
               <h3>Endereço de Entrega</h3>
               <p>Informe o endereço onde deseja receber seu pedido</p>
             </div>
-          </CheckoutDetails>
+          </CheckoutDescription>
           <PaymentMethods>
             <li className={paymentMethod === 'credito' ? 'active' : ''}>
               <input type="radio" id="credito" name="order" value='credito' checked={paymentMethod === 'credito'} onChange={changePayment}/>
@@ -62,7 +62,7 @@ export function Checkout(){
               </label>
             </li>
           </PaymentMethods>
-        </CheckoutFormDetails> 
+        </CheckoutOrderDetails> 
       </CheckoutDetailsContainer>
     </CheckoutContainer>
   )
