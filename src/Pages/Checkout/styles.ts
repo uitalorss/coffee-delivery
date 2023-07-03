@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 
 export const CheckoutContainer = styled.div`
-
+display: flex;
 `
 
 export const CheckoutDetailsContainer = styled.div`
@@ -109,4 +109,32 @@ export const CheckoutDetails = styled.div`
 export const CheckoutOrder = styled.div``
 
 export const PaymentMethods = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  li{
+    width: 178px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background: ${props => props.theme.colors["base-button"]};
+    border: 1px solid ${props => props.theme.colors["base-button"]};
+    input{
+      display: none;
+    }
+    label{
+      font-size: ${props => props.theme.sizes.button["button-M"]};
+      line-height: 160%;
+      text-transform: uppercase;
+    }
+    &:hover{
+      background: ${props => props.theme.colors["base-hover"]};
+    }
+    &.active{
+      background: ${props => props.theme.colors["purple-light"]};
+      border: 1px solid ${props => props.theme.colors["purple"]};
+    }
+  }
 `

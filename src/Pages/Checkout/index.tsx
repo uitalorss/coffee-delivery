@@ -1,9 +1,14 @@
 import { MapPin, CurrencyDollar, CreditCard, Bank, Money } from "phosphor-react";
 import { CheckoutContainer, CheckoutContent, CheckoutDetails, CheckoutDetailsContainer, CheckoutFormDetails, CheckoutOrder, PaymentMethods } from "./styles";
 import { TitleXSmall } from "../../styles/global";
-
-
+import { useState } from "react";
 export function Checkout(){
+  const [paymentMethod, setPaymentMethod] = useState('');
+
+  function changePayment(event: any){
+    setPaymentMethod(event.target.value);
+  }
+
   return (
     <CheckoutContainer>
       <CheckoutDetailsContainer>
@@ -35,29 +40,28 @@ export function Checkout(){
             </div>
           </CheckoutDetails>
           <PaymentMethods>
-            <li>
-              <input type="radio" id="credito" name="order"/>
+            <li className={paymentMethod === 'credito' ? 'active' : ''}>
+              <input type="radio" id="credito" name="order" value='credito' checked={paymentMethod === 'credito'} onChange={changePayment}/>
+              <CreditCard size={16}/>
               <label htmlFor="credito">
-                <CreditCard size={16}/>
                 Cartão de crédito
               </label>
             </li>
-            <li>
-              <input type="radio" id="Debito" name="order"/>
-              <label htmlFor="Debito">
-                <Bank size={16}/>
-                Cartão de Débito
+            <li className={paymentMethod === 'debito' ? 'active' : ''}>
+              <input type="radio" id="debito" name="order" value='debito' checked={paymentMethod === 'debito'} onChange={changePayment}/>
+              <Bank size={16}/>
+              <label htmlFor="debito">
+                Cartão de débito
               </label>
             </li>
-            <li>
-              <input type="radio" id="dinheiro" name="order"/>
+            <li className={paymentMethod === 'dinheiro' ? 'active' : ''}>
+              <input type="radio" id="dinheiro" name="order" value='dinheiro' checked={paymentMethod === 'dinheiro'} onChange={changePayment}/>
+              <Money size={16}/>
               <label htmlFor="dinheiro">
-                <Money size={16}/>
                 Dinheiro
               </label>
             </li>
           </PaymentMethods>
-
         </CheckoutFormDetails> 
       </CheckoutDetailsContainer>
     </CheckoutContainer>
