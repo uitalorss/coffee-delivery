@@ -2,8 +2,13 @@ import { styled } from "styled-components";
 
 
 export const CheckoutContainer = styled.div`
+
+`
+
+export const CheckoutDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 `
 
 export const CheckoutContent = styled.div`
@@ -73,8 +78,15 @@ export const CheckoutDetails = styled.div`
     gap: 0 .5rem;
     margin-bottom: 2rem;
     span{
-      svg {
-        color: ${props => props.theme.colors["yellow-dark"]}
+      &.mapPin{
+        svg{
+          color: ${props => props.theme.colors["yellow-dark"]}
+        }
+      }
+      &.currencyDollar{
+        svg{
+          color: ${props => props.theme.colors["purple"]}
+        }
       }
     }
     .titleForm{
@@ -95,3 +107,6 @@ export const CheckoutDetails = styled.div`
 `
 
 export const CheckoutOrder = styled.div``
+
+export const PaymentMethods = styled.ul`
+`
