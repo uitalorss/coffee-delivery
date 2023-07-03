@@ -24,7 +24,7 @@ export function OrderCoffeeItem(orderItem: ItemProps){
           }).format(orderItem.price)}</span>
         </div>
         <div className="itemActions">
-          <QuantityItem />
+          <QuantityItem amount={orderItem.amount} />
           <DeleteItem />
         </div>
       </div>

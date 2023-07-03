@@ -2,6 +2,7 @@ import { TitleSmall } from '../../../styles/global';
 import { BuyItem } from '../BuyItem';
 import { QuantityItem } from '../../../components/QuantityItem';
 import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer, TagContainer } from './styles';
+import { useState } from 'react';
 
 interface CoffeeProps{
   id: number;
@@ -13,6 +14,18 @@ interface CoffeeProps{
 }
 
 export function CoffeeItem(coffee: CoffeeProps){
+  const [amount, setAmount] = useState(0);
+
+  function decrementAmount(){
+    if(amount > 0){
+      setAmount(amount - 1);
+    }
+  }
+
+  function incrementAmount(){
+    setAmount(amount + 1);
+  }
+
   return(
     <ItemContainer>
       <img src={`src/assets/coffees/${coffee.image}`} alt="ilustração do café a ser vendido" />
@@ -32,7 +45,7 @@ export function CoffeeItem(coffee: CoffeeProps){
           </TitleSmall>
         </span>
         <AddToCartContainer>
-          <QuantityItem />
+          <QuantityItem amount={amount} incrementAmount={incrementAmount} decrementAmount={decrementAmount} />
           <BuyItem />
         </AddToCartContainer>
       </InfoPrice>
