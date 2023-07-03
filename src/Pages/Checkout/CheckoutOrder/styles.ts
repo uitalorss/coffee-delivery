@@ -2,7 +2,11 @@ import { styled } from "styled-components";
 import { CheckoutContent } from "../styles";
 
 
-export const CheckoutOrderContainer = styled(CheckoutContent)``
+export const CheckoutOrderContainer = styled(CheckoutContent)`
+  display: flex;
+  flex-direction: column;
+  width: 468px;
+`
 
 export const CheckoutOrderDetails = styled.div`
     padding: 2.5rem;
@@ -16,6 +20,7 @@ export const CheckoutOrderDetails = styled.div`
 export const InfoPayments = styled.div`
   display: flex;
   flex-direction: column;
+  gap: .75rem;
   div{
     display: flex;
     align-items: center;
@@ -34,7 +39,6 @@ export const InfoPayments = styled.div`
 `
 
 export const ConfirmOrder = styled.button`
-  max-width: 368px;
   border: none;
   outline: none;
   border-radius: 6px;

@@ -1,4 +1,6 @@
+import { order } from "../../../data/order";
 import { TitleXSmall } from "../../../styles/global";
+import { OrderCoffeeItem } from "./OrderCoffeeItem";
 import { CheckoutOrderContainer, CheckoutOrderDetails, ConfirmOrder, InfoPayments } from "./styles";
 
 
@@ -7,6 +9,12 @@ export function CheckoutOrder(){
     <CheckoutOrderContainer>
       <TitleXSmall>Cafés selecionados</TitleXSmall>
       <CheckoutOrderDetails>
+        {order.map((item) => {
+          return(
+            <OrderCoffeeItem {...item}/>
+          )
+        })}
+        
         <InfoPayments>
           <div>
             <span>Total de itens</span>

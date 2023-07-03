@@ -1,6 +1,6 @@
 import { TitleSmall } from '../../../styles/global';
 import { BuyItem } from '../BuyItem';
-import { QuantityItem } from '../QuantityItem';
+import { QuantityItem } from '../../../components/QuantityItem';
 import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer, TagContainer } from './styles';
 
 interface CoffeeProps{

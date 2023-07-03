@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { QuantityButton, QuantityContainer, QuantityInput } from "./styles";
+import { QuantityButton, QuantityContainer } from "./styles";
 import { Plus, Minus } from 'phosphor-react'
 
 
@@ -15,7 +15,7 @@ export function QuantityItem(){
   return(
     <QuantityContainer>
       <QuantityButton onClick={decrementAmount}><Minus size={14} weight="fill"/></QuantityButton>
-      <QuantityInput value={amount} type="number" readOnly />
+      <input value={amount} type="number" readOnly />
       <QuantityButton onClick={()=> setAmount(amount + 1)}><Plus size={14} weight="fill"/></QuantityButton>
     </QuantityContainer>
   )
