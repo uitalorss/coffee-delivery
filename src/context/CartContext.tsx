@@ -24,10 +24,9 @@ export function CartContextProvider({children}: CartContextProviderProps){
   const [cart, setCart] = useState<ItemProps[]>([...order])
 
   function deleteItemFromCart(id: number){
-    const newCart = cart.filter((item) => {
-      item.id !== id
-    })
-    setCart(newCart)
+    setCart(cart.filter((item) => {
+      return item.id !== id;
+    }))
   }
 
   return(

@@ -27,7 +27,7 @@ export function OrderCoffeeItem(orderItem: ItemProps){
         </div>
         <div className="itemActions">
           <QuantityItem amount={orderItem.amount} />
-          <ButtonDeleteItem type="submit" onSubmit={deleteItemFromCart(orderItem.id)}>
+          <ButtonDeleteItem type="button" onClick={() => deleteItemFromCart(orderItem.id)}>
             <Trash size={16}/>
             <span>Remover</span>
           </ButtonDeleteItem>
