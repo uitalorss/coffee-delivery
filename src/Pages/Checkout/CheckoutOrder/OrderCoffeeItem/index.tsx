@@ -1,6 +1,8 @@
-import { DeleteItem } from "../../../../components/DeleteItem";
+import { useContext } from "react";
 import { QuantityItem } from "../../../../components/QuantityItem";
-import { OrderCoffeeCard } from "./styles";
+import { ButtonDeleteItem, OrderCoffeeCard } from "./styles";
+import { CartContext } from "../../../../context/CartContext";
+import { Trash } from "phosphor-react";
 
 interface ItemProps {
   id: number;
@@ -10,8 +12,8 @@ interface ItemProps {
   amount: number;
 }
 
-
 export function OrderCoffeeItem(orderItem: ItemProps){
+  const {deleteItemFromCart} = useContext(CartContext)
   return(
     <OrderCoffeeCard>
       <img src={`src/assets/coffees/${orderItem.image}`} alt="" />
@@ -25,7 +27,10 @@ export function OrderCoffeeItem(orderItem: ItemProps){
         </div>
         <div className="itemActions">
           <QuantityItem amount={orderItem.amount} />
-          <DeleteItem />
+          <ButtonDeleteItem type="submit" onSubmit={deleteItemFromCart(orderItem.id)}>
+            <Trash size={16}/>
+            <span>Remover</span>
+          </ButtonDeleteItem>
         </div>
       </div>
     </OrderCoffeeCard>

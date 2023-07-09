@@ -1,15 +1,17 @@
-import { order } from "../../../data/order";
+import { useContext } from "react";
 import { TitleXSmall } from "../../../styles/global";
 import { OrderCoffeeItem } from "./OrderCoffeeItem";
 import { CheckoutOrderContainer, CheckoutOrderDetails, ConfirmOrder, InfoPayments } from "./styles";
+import { CartContext } from "../../../context/CartContext";
 
 
 export function CheckoutOrder(){
+  const { cart } = useContext(CartContext)
   return(
     <CheckoutOrderContainer>
       <TitleXSmall>Cafés selecionados</TitleXSmall>
       <CheckoutOrderDetails>
-        {order.map((item) => {
+        {cart.map((item) => {
           return(
             <OrderCoffeeItem {...item}/>
           )
