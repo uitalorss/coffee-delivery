@@ -35,6 +35,7 @@ export const OrderCoffeeCard = styled.div`
 
 export const ButtonDeleteItem = styled.button`
   background: ${props => props.theme.colors["base-button"]};
+  border: none;
   padding: .5rem;
   display: flex;
   align-items: center;

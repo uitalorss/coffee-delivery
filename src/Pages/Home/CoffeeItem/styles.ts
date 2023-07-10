@@ -62,6 +62,7 @@ export const BuyItem = styled.button`
   background: ${props => props.theme.colors["purple-dark"]};
   padding: .5rem .5rem .25rem .5rem;
   border-radius: 6px;
+  cursor: pointer;
   .cart{
   color: ${props => props.theme.colors["white"]}
   }
