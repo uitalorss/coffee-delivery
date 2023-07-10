@@ -26,7 +26,10 @@ export function Header(){
 
   return (
     <HeaderContainer>
-      <img src={logoCoffee} alt="logo da cafeteria" />
+      <NavLink to='/'>
+        <img src={logoCoffee} alt="logo da cafeteria" />
+      </NavLink>
+      
       <Info>
         <div>
           <MapPin className="pinMap" size={22} weight="fill"/>
