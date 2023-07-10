@@ -1,8 +1,9 @@
 import { TitleSmall } from '../../../styles/global';
-import { BuyItem } from '../BuyItem';
 import { QuantityItem } from '../../../components/QuantityItem';
-import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer, TagContainer } from './styles';
-import { useState } from 'react';
+import { InfoPrice, ItemContainer, ItemDescription, TagItem, AddToCartContainer, TagContainer, BuyItem } from './styles';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../../context/CartContext';
+import { ShoppingCart } from 'phosphor-react';
 
 interface CoffeeProps{
   id: number;
@@ -15,6 +16,7 @@ interface CoffeeProps{
 
 export function CoffeeItem(coffee: CoffeeProps){
   const [amount, setAmount] = useState(0);
+  const {addToCart} = useContext(CartContext)
 
   function decrementAmount(){
     if(amount > 0){
@@ -46,7 +48,9 @@ export function CoffeeItem(coffee: CoffeeProps){
         </span>
         <AddToCartContainer>
           <QuantityItem amount={amount} incrementAmount={incrementAmount} decrementAmount={decrementAmount} />
-          <BuyItem />
+          <BuyItem onClick={() => addToCart(coffee.id, coffee.nome, coffee.image, coffee.preco, amount)}>
+            <ShoppingCart className="cart" size={22} weight="fill"/>
+          </BuyItem>
         </AddToCartContainer>
       </InfoPrice>
     </ItemContainer>
