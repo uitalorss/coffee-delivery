@@ -50,7 +50,11 @@ export const ConfirmOrder = styled.button`
   text-transform: uppercase;
   line-height: 160%;
   cursor: pointer;
-  &:hover{
+  &:disabled{
+    opacity: .7;
+    cursor: not-allowed;
+  }
+  &:not(:disabled):hover{
     background: ${props => props.theme.colors["yellow-dark"]};
   }
 `

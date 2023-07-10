@@ -17,6 +17,8 @@ export function CheckoutOrder(){
     return value;
   }
 
+  let isConfirmOrderDisabled = cart.length === 0;
+
   return(
     <CheckoutOrderContainer>
       <TitleXSmall>Cafés selecionados</TitleXSmall>
@@ -50,7 +52,7 @@ export function CheckoutOrder(){
             }).format(sumItems() + delivery)}</span>
           </div>
         </InfoPayments>
-        <ConfirmOrder type="submit">Confirmar Pedido</ConfirmOrder>
+        <ConfirmOrder disabled={isConfirmOrderDisabled} type="submit">Confirmar Pedido</ConfirmOrder>
       </CheckoutOrderDetails>
     </CheckoutOrderContainer>
   )
