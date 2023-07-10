@@ -7,6 +7,16 @@ import { CartContext } from "../../../context/CartContext";
 
 export function CheckoutOrder(){
   const { cart } = useContext(CartContext)
+  const delivery = cart.length > 0 ? 5 : 0;
+
+  function sumItems(){
+    let value = 0;
+    cart.map((item) => {
+      value += (item.amount * item.price)
+    })
+    return value;
+  }
+
   return(
     <CheckoutOrderContainer>
       <TitleXSmall>Cafés selecionados</TitleXSmall>
@@ -23,21 +33,21 @@ export function CheckoutOrder(){
             <span>{new Intl.NumberFormat('pt-br', {
               style: 'currency',
               currency: 'BRL'
-            }).format(50)}</span>
+            }).format(sumItems())}</span>
           </div>
           <div>
             <span>Entrega</span>
             <span>{new Intl.NumberFormat('pt-br', {
               style: 'currency',
               currency: 'BRL'
-            }).format(5)}</span>
+            }).format(delivery)}</span>
           </div>
           <div className="emphasis">
             <span>Total</span>
             <span>{new Intl.NumberFormat('pt-br', {
               style: 'currency',
               currency: 'BRL'
-            }).format(55)}</span>
+            }).format(sumItems() + delivery)}</span>
           </div>
         </InfoPayments>
         <ConfirmOrder type="submit">Confirmar Pedido</ConfirmOrder>

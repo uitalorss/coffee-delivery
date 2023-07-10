@@ -23,7 +23,7 @@ export function OrderCoffeeItem(orderItem: ItemProps){
           <span className="itemPrice">{new Intl.NumberFormat('pt-br', {
             style: 'currency',
             currency: 'BRL'
-          }).format(orderItem.price)}</span>
+          }).format(orderItem.price * orderItem.amount)}</span>
         </div>
         <div className="itemActions">
           <QuantityItem amount={orderItem.amount} />
