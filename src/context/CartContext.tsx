@@ -5,6 +5,8 @@ interface CartContextProviderType {
   cart: ItemProps[];
   deleteItemFromCart: (id: number) => void;
   addToCart: (itemId: number, itemName: string, itemImage: string, itemPrice: number, itemAmount: number) => void;
+  handleIncrementCart: (id: number) => void;
+  handleDecrementCart: (id: number) => void;
 }
 
 interface CartContextProviderProps {
@@ -30,15 +32,24 @@ export function CartContextProvider({children}: CartContextProviderProps){
     }))
   }
 
-  /*function incrementAmount(id: number){
-    const incrementItem = cart.filter((item) => {
+  function handleDecrementCart(id: number){
+    setCart(cart.filter((item) => {
       if(item.id === id){
-        item.amount + 1;
+        if(item.amount > 0){
+          return item.amount = item.amount - 1;
+        }
       }
-    })
-    setCart(incrementItem)
-  }*/
+    }))
+  }
 
+  function handleIncrementCart(id: number){
+    setCart(cart.filter((item) => {
+      if(item.id === id){
+        return item.amount = item.amount + 1;
+      }
+    }))
+  }
+  
   function addToCart(itemId: number, itemName: string, itemImage: string, itemPrice: number, itemAmount: number){
     const newOrder = {
       id: itemId,
@@ -63,7 +74,7 @@ export function CartContextProvider({children}: CartContextProviderProps){
   }*/
 
   return(
-    <CartContext.Provider value={{cart, deleteItemFromCart, addToCart}}>
+    <CartContext.Provider value={{cart, deleteItemFromCart, addToCart, handleIncrementCart, handleDecrementCart}}>
       {children}
     </CartContext.Provider>
   )

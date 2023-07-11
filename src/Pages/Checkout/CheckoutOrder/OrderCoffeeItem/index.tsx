@@ -13,7 +13,16 @@ interface ItemProps {
 }
 
 export function OrderCoffeeItem(orderItem: ItemProps){
-  const {deleteItemFromCart} = useContext(CartContext)
+  const {deleteItemFromCart, handleIncrementCart, handleDecrementCart} = useContext(CartContext);
+
+  function incrementCart(){
+    handleIncrementCart(orderItem.id)
+  }
+
+  function decrementCart(){
+    handleDecrementCart(orderItem.id)
+  }
+
   return(
     <OrderCoffeeCard>
       <img src={`src/assets/coffees/${orderItem.image}`} alt="" />
@@ -26,7 +35,7 @@ export function OrderCoffeeItem(orderItem: ItemProps){
           }).format(orderItem.price * orderItem.amount)}</span>
         </div>
         <div className="itemActions">
-          <QuantityItem amount={orderItem.amount} />
+          <QuantityItem amount={orderItem.amount} incrementAmount={incrementCart} decrementAmount={decrementCart}/>
           <ButtonDeleteItem type="button" onClick={() => deleteItemFromCart(orderItem.id)}>
             <Trash size={16}/>
             <span>Remover</span>
