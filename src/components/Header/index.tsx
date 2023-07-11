@@ -2,8 +2,9 @@ import { HeaderContainer, Info } from "./styles";
 import logoCoffee from '../../assets/logo-coffee.svg';
 import {MapPin, ShoppingCart} from 'phosphor-react'
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { CartContext } from "../../context/CartContext";
 
 interface Location {
   city?: string;
@@ -14,6 +15,7 @@ interface Location {
 
 export function Header(){
   const [currentLocation, setCurrentLocation] = useState<Location>();
+  const {cart} = useContext(CartContext);
 
   useEffect(() => {
     geoLocation()
@@ -22,7 +24,11 @@ export function Header(){
   const geoLocation = async () => {
     const location = await axios.get('https://ipapi.co/json')
     setCurrentLocation(location.data);
-  }  
+  }
+  
+  function isCartEmpty(){
+    return cart.length === 0 ? true : false;
+  }
 
   return (
     <HeaderContainer>
@@ -36,6 +42,7 @@ export function Header(){
           <span>{currentLocation?.city}, {currentLocation?.region_code}</span>
         </div>
         <NavLink to='/checkout'>
+          <span className={isCartEmpty() ? "disabled" : ""}>{cart.length}</span>
           <ShoppingCart className="cart" size={22} weight="fill"/>
         </NavLink>
       </Info>

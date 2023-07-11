@@ -31,8 +31,25 @@ export const Info = styled.div`
       background: ${props => props.theme.colors["yellow-light"]};
       padding: .5rem .5rem .25rem .5rem;
       border-radius: 6px;
+      position: relative;
       .cart{
-      color: ${props => props.theme.colors["yellow-dark"]}
+      color: ${props => props.theme.colors["yellow-dark"]};
+      text-decoration: none;
+      }
+      span{
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        padding: .1rem .5rem;
+        border-radius: 100px;
+        font-size: ${props => props.theme.sizes.text["text-S"]};
+        font-weight: 700;
+        text-decoration: none;
+        color: ${props => props.theme.colors.white};
+        background: ${props => props.theme.colors["yellow-dark"]};
+        &.disabled{
+          display: none;
+        }
       }
     }
 `
