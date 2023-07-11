@@ -1,5 +1,4 @@
 import { ReactNode, createContext, useState } from "react";
-import { order } from "../data/order";
 
 interface CartContextProviderType {
   cart: ItemProps[];
@@ -49,7 +48,7 @@ export function CartContextProvider({children}: CartContextProviderProps){
       }
     }))
   }
-  
+
   function addToCart(itemId: number, itemName: string, itemImage: string, itemPrice: number, itemAmount: number){
     const newOrder = {
       id: itemId,
@@ -59,19 +58,8 @@ export function CartContextProvider({children}: CartContextProviderProps){
       amount: itemAmount
     }
     setCart([...cart, newOrder])
-    console.log('Produto adicionado com sucesso.')
+    alert('Produto adicionado com sucesso.')
   }
-
-  /*function decrementAmount(id: number){
-    const decrementItem = cart.filter((item) => {
-      if(item.id === id){
-        if(item.amount > 0){
-          item.amount - 1;
-        }
-      }
-    })
-    setCart(decrementItem);
-  }*/
 
   return(
     <CartContext.Provider value={{cart, deleteItemFromCart, addToCart, handleIncrementCart, handleDecrementCart}}>
