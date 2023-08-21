@@ -110,11 +110,6 @@ export const PaymentItem = styled.div`
     display: none;
   }
 
-  input:checked{
-    background: ${props => props.theme.colors["purple-light"]};
-    border: 1px solid ${props => props.theme.colors["purple"]};
-  }
-
   label{
     font-size: ${props => props.theme.sizes.button["button-M"]};
     line-height: 160%;
@@ -123,6 +118,11 @@ export const PaymentItem = styled.div`
 
   svg{
     color: ${props => props.theme.colors["purple"]};
+  }
+
+  &:has(input:checked){
+    background: ${props => props.theme.colors["purple-light"]};
+    border: 1px solid ${props => props.theme.colors["purple"]};
   }
   
   &:hover{
