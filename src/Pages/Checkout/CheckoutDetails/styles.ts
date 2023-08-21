@@ -1,16 +1,11 @@
 import { styled } from "styled-components"
-import { CheckoutContent } from "../styles"
+import { CheckoutContent, CheckoutDetails } from "../styles"
 
 export const CheckoutDetailsContainer = styled(CheckoutContent)``
 
-export const CheckoutDetails = styled.div`
-  padding: 2.5rem;
-  background: ${props => props.theme.colors["base-card"]};
-  border-radius: 6px;
-`
+export const CheckoutFormDetails = styled(CheckoutDetails)``
 
-export const CheckoutFormDetails = styled(CheckoutDetails)`
-  form{
+export const CheckoutOrderInputs = styled.div`
     display: grid;
     gap: 1rem .75rem;
     grid-template-areas:
@@ -58,7 +53,6 @@ export const CheckoutFormDetails = styled(CheckoutDetails)`
       grid-area: estado;
       max-width: 70px;
     }
-  }
 `
 
 export const CheckoutOrderDetails = styled(CheckoutDetails)``
@@ -96,37 +90,42 @@ export const CheckoutDescription = styled.div`
     }
 `
 
-export const PaymentMethods = styled.ul`
+export const PaymentMethods = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  li{
-    width: 178px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    padding: 1rem;
-    border-radius: 6px;
-    background: ${props => props.theme.colors["base-button"]};
-    border: 1px solid ${props => props.theme.colors["base-button"]};
-    input{
-      display: none;
-    }
-    label{
-      font-size: ${props => props.theme.sizes.button["button-M"]};
-      line-height: 160%;
-      text-transform: uppercase;
-    }
-    svg{
-      color: ${props => props.theme.colors["purple"]};
-    }
-    &:hover{
-      background: ${props => props.theme.colors["base-hover"]};
-    }
-    &.active{
-      background: ${props => props.theme.colors["purple-light"]};
-      border: 1px solid ${props => props.theme.colors["purple"]};
-    }
+`
+
+export const PaymentItem = styled.div`
+  width: 178px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background: ${props => props.theme.colors["base-button"]};
+  border: 1px solid ${props => props.theme.colors["base-button"]};
+  input{
+    display: none;
+  }
+
+  input:checked{
+    background: ${props => props.theme.colors["purple-light"]};
+    border: 1px solid ${props => props.theme.colors["purple"]};
+  }
+
+  label{
+    font-size: ${props => props.theme.sizes.button["button-M"]};
+    line-height: 160%;
+    text-transform: uppercase;
+  }
+
+  svg{
+    color: ${props => props.theme.colors["purple"]};
+  }
+  
+  &:hover{
+    background: ${props => props.theme.colors["base-hover"]};
   }
 `

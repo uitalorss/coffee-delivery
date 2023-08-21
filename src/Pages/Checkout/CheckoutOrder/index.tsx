@@ -5,11 +5,11 @@ import { CheckoutOrderContainer, CheckoutOrderDetails, ConfirmOrder, InfoPayment
 import { CartContext } from "../../../context/CartContext";
 
 
-export function CheckoutOrder(){
+export function CheckoutOrder() {
   const { cart } = useContext(CartContext)
   const delivery = cart.length > 0 ? 5 : 0;
 
-  function sumItems(){
+  function sumItems() {
     let value = 0;
     cart.map((item) => {
       value += (item.amount * item.price)
@@ -17,18 +17,16 @@ export function CheckoutOrder(){
     return value;
   }
 
-  let isConfirmOrderDisabled = cart.length === 0;
-
-  return(
+  return (
     <CheckoutOrderContainer>
       <TitleXSmall>Cafés selecionados</TitleXSmall>
       <CheckoutOrderDetails>
         {cart.map((item) => {
-          return(
-            <OrderCoffeeItem {...item}/>
+          return (
+            <OrderCoffeeItem {...item} />
           )
         })}
-        
+
         <InfoPayments>
           <div>
             <span>Total de itens</span>
@@ -52,7 +50,7 @@ export function CheckoutOrder(){
             }).format(sumItems() + delivery)}</span>
           </div>
         </InfoPayments>
-        <ConfirmOrder disabled={isConfirmOrderDisabled} type="submit">Confirmar Pedido</ConfirmOrder>
+        <ConfirmOrder disabled={cart.length === 0 ? true : false} type="submit">Confirmar Pedido</ConfirmOrder>
       </CheckoutOrderDetails>
     </CheckoutOrderContainer>
   )
