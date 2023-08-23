@@ -14,8 +14,8 @@ export function Success() {
           <OrderInfoItem>
             <span className="mapPin"><MapPin size={16} weight="fill" /></span>
             <div>
-              <article>Entrega em Rua João Daniel Martinelli, 102</article>
-              <article>Farrapos - Porto Alegre, RS</article>
+              <article>Travessa do Amor Divino, 102</article>
+              <article>Armação - Salvador, BA</article>
             </div>
           </OrderInfoItem>
           <OrderInfoItem>

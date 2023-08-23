@@ -21,8 +21,8 @@ export const OrderInfo = styled.div`
   flex-direction: column;
   gap: 2rem 0;
   width: 100%;
-  max-width: 680px;
-  border: 2px solid ${props => props.theme.colors.purple};
+  max-width: 580px;
+  border: 1px solid ${props => props.theme.colors.purple};
   border-radius: 6px 36px 6px 36px;
   padding: 2.5rem;
   margin-top: 2.5rem;
